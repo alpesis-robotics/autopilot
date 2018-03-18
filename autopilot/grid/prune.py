@@ -1,9 +1,5 @@
 import numpy as np
 
-from grid import create_grid
-from planning import a_star
-from visualize import plot_grid
-
 
 def point(p):
     return np.array([p[0], p[1], 1.]).reshape(1, -1)
@@ -34,28 +30,3 @@ def prune_path(path):
         else:
             i += 1
     return pruned_path
-
-
-def grid_search(grid, start, goal):
-    path, cost = a_star(grid, heuristic, start, goal)
-    print(len(path), cost)
-    plot_grid(grid, path, start, goal)
-
-    pruned_path = prune_path(path)
-    print(len(pruned_path))
-    # print(pruned_path)
-    plot_grid(grid, pruned_path, start, goal)
-
-
-if __name__ == '__main__':
-    filename = "colliders.csv"
-    data = np.loadtxt(filename, delimiter=",", dtype="Float64", skiprows=2)
-    print(data)
-
-    drone_altitude = 5
-    safe_distance = 3
-    grid = create_grid(data, drone_altitude, safe_distance)
-   
-    start = (25, 100)
-    goal = (750., 370.)
-    grid_search(grid, start, goal)
