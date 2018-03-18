@@ -1,7 +1,7 @@
 from grid.planning import a_star
-from grid.visualize import plot_grid
 from grid.prune import heuristic
 from grid.prune import prune_path
+from maps.visualize import plot_grid
 
 
 def grid_search(grid, start, goal):

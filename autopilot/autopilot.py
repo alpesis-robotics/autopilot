@@ -1,7 +1,7 @@
 import numpy as np
 
 import settings
-from data.grid import create_grid
+from maps.grid import create_grid
 from grid_search import grid_search
 
 

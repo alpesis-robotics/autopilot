@@ -1,1 +1,1 @@
-COLLIDERS = "colliders.csv"
+COLLIDERS = "maps/colliders.csv"
