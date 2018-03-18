@@ -6,7 +6,7 @@ Autopilot
 ::
 
     # grid search
-    $ python3 grid/autopilot.py
+    $ python3 autopilot.py
     [[-305.  -435.    85.5    5.     5.    85.5]
      [-295.  -435.    85.5    5.     5.    85.5]
      [-285.  -435.    85.5    5.     5.    85.5]

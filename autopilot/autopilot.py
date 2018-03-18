@@ -1,8 +1,11 @@
 import numpy as np
+from skimage.util import invert
+from skimage.morphology import medial_axis
 
 import settings
 from maps.grid import create_grid
 from grid_search import grid_search
+from graph_search import graph_search
 
 
 if __name__ == '__main__':
@@ -12,7 +15,12 @@ if __name__ == '__main__':
     drone_altitude = 5
     safe_distance = 3
     grid = create_grid(data, drone_altitude, safe_distance)
+    skeleton = medial_axis(invert(grid))
    
     start = (25, 100)
     goal = (750., 370.)
     grid_search(grid, start, goal)
+
+    start = (25, 100)
+    goal = (650., 500)
+    graph_search(grid, skeleton, start, goal)
