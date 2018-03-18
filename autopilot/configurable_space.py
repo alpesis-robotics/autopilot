@@ -47,7 +47,7 @@ if __name__ == '__main__':
     print(data)
 
     # static drone altitude (metres)
-    drone_altitude = 5
+    drone_altitude = 6
     # minimum distance required to stay away from an obstacle (metres)
     safe_distance = 3
 
