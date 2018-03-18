@@ -1,10 +1,8 @@
 import numpy as np
-import matplotlib.pyplot as plt
 
 from grid import create_grid
 from planning import a_star
-
-plt.rcParams["figure.figsize"] = [12, 12]
+from visualize import plot_grid
 
 
 def point(p):
@@ -38,21 +36,15 @@ def prune_path(path):
     return pruned_path
 
 
-def plot(grid, path, start, goal):
-    plt.imshow(grid, cmap="Greys", origin="lower")
-    plt.xlabel('EAST')
-    plt.ylabel('NORTH')
+def grid_search(grid, start, goal):
+    path, cost = a_star(grid, heuristic, start, goal)
+    print(len(path), cost)
+    plot_grid(grid, path, start, goal)
 
-    plt.plot(start[1], start[0], 'x')
-    plt.plot(goal[1], goal[0], 'x')
-    plt.plot(np.array(path)[:, 1], np.array(path)[:, 0], 'g')
-    plt.scatter(np.array(path)[:, 1], np.array(path)[:, 0])
-
-    plt.xlabel('EAST')
-    plt.ylabel('NORTH')
-   
-    plt.show()
-
+    pruned_path = prune_path(path)
+    print(len(pruned_path))
+    # print(pruned_path)
+    plot_grid(grid, pruned_path, start, goal)
 
 
 if __name__ == '__main__':
@@ -63,14 +55,7 @@ if __name__ == '__main__':
     drone_altitude = 5
     safe_distance = 3
     grid = create_grid(data, drone_altitude, safe_distance)
-
+   
     start = (25, 100)
     goal = (750., 370.)
-    path, cost = a_star(grid, heuristic, start, goal)
-    print(len(path), cost)
-    plot(grid, path, start, goal)
-
-    pruned_path = prune_path(path)
-    print(len(pruned_path))
-    # print(pruned_path)
-    plot(grid, pruned_path, start, goal)
+    grid_search(grid, start, goal)

@@ -15,6 +15,7 @@ class Action(Enum):
     UP = (-1, 0, 1)
     DOWN = (1, 0, 1)
 
+
     def __str__(self):
         if self == self.LEFT:
             return '<'
