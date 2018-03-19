@@ -33,12 +33,17 @@ def plot_graph(grid, skeleton, path, start, goal):
     plt.show()
 
 
-def plot_medial_map(grid, skeleton, start, goal):
+def plot_medial_map(grid, skeleton, path, start, goal, skel_start, skel_goal):
     plt.imshow(grid, cmap="Greys", origin="lower")
     plt.imshow(skeleton, cmap="Greys", origin="lower", alpha=0.7)
 
     plt.plot(start[1], start[0], 'rx')
     plt.plot(goal[1], goal[0], 'rx')
+    plt.plot(skel_start[1], skel_start[0], 'x')
+    plt.plot(skel_goal[1], skel_goal[0], 'x')
+
+    plt.plot(np.array(path)[:, 1], np.array(path)[:, 0], 'g')
+    plt.scatter(np.array(path)[:, 1], np.array(path)[:, 0])
 
     plt.xlabel('EAST')
     plt.ylabel('NORTH')

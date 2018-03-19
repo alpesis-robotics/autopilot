@@ -5,6 +5,7 @@ from skimage.morphology import medial_axis
 import settings
 from maps.grid import create_grid
 from grid_search import grid_search
+from medial_search import medial_search
 from graph_search import graph_search
 
 
@@ -22,5 +23,9 @@ if __name__ == '__main__':
     grid_search(grid, start, goal)
 
     start = (25, 100)
+    goal = (750., 370.)
+    medial_search(grid, skeleton, start, goal)
+
+    start = (25, 100)
     goal = (650., 500)
-    graph_search(grid, skeleton, start, goal)
+    # graph_search(grid, skeleton, start, goal)
