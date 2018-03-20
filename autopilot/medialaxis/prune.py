@@ -52,3 +52,4 @@ def prune_path(path):
         else:
             i += 1
     return pruned_path
+

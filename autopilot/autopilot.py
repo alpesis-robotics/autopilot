@@ -21,8 +21,8 @@ if __name__ == '__main__':
    
     start = (25, 100)
     goal = (750., 370.)
-    grid_search(grid, start, goal)
-    #medial_search(grid, skeleton, start, goal)
+    # grid_search(grid, start, goal)
+    # medial_search(grid, skeleton, start, goal)
 
     grid, edges = create_grid_and_edges(data, drone_altitude)
     graph_search(grid, edges, start, goal)

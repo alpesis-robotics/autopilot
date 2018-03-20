@@ -20,4 +20,3 @@ def medial_search(grid, skeleton, start, goal):
     #print(len(pruned_path))
     #print(pruned_path)
     #plot_medial_map(grid, pruned_path, start, goal)
-

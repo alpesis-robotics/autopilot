@@ -6,7 +6,6 @@ from queue import PriorityQueue
 class Action(Enum):
     """
     An action is represented by a 3 element tuple.
-
     The first 2 values are the delta of the action relative
     to the current grid position. The third and final value
     is the cost of performing the action.
@@ -109,4 +108,3 @@ def a_star(grid, heuristic_func, start, goal):
         path.append(branch[n][1])
 
     return path[::-1], path_cost
-
