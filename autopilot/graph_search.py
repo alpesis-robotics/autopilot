@@ -1,9 +1,12 @@
-from maps.visualize import plot_medial_map
-from graph.prune import find_start_goal
+from graph.planning import a_star
 
 
-def graph_search(grid, skeleton, start, goal):
-    plot_medial_map(grid, skeleton, start, goal)
-    skel_start, skel_goal = find_start_goal(skeleton, start, goal)
-    print(start, goal)
-    print(skel_start, skel_goal)
+def graph_search(grid, edges, start, goal):
+    path, cost = a_star(grid, heuristic, start, goal)
+    #print(len(path), cost)
+    #plot_grid(grid, path, start, goal)
+
+    #pruned_path = prune_path(path)
+    #print(len(pruned_path))
+    # print(pruned_path)
+    #plot_grid(grid, pruned_path, start, goal)

@@ -1,6 +1,6 @@
 from grid.planning import a_star
-from grid.prune import heuristic
 from grid.prune import prune_path
+from evals.heuristic import heuristic
 from maps.visualize import plot_grid
 
 

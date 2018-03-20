@@ -5,11 +5,6 @@ def point(p):
     return np.array([p[0], p[1], 1.]).reshape(1, -1)
 
 
-def heuristic(position, goal_position):
-    # return np.sqrt((position[0] - goal_position[0])**2 + (position[1] - goal_position[1])**2)
-    return np.abs(position[0] - goal_position[0]) + np.abs(position[1] - goal_position[1])
-
-
 def collinearity_check(p1, p2, p3, epsilon=1e-6):
     m = np.concatenate((p1, p2, p3), 0)
     det = np.linalg.det(m)

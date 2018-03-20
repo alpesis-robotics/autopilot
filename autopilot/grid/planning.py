@@ -86,7 +86,7 @@ def a_star(grid, heuristic_func, start, goal):
             # Get the new vertexes connected to the current vertex
             for a in valid_actions(grid, current_node):
                 next_node = (current_node[0] + a.delta[0], current_node[1] + a.delta[1])
-                new_cost = current_cost + a.cost + heuristic_func(next_node, goal)
+                new_cost = current_cost + a.cost + heuristic_func("manhanttan", next_node, goal)
 
                 if next_node not in visited:
                     visited.add(next_node)
