@@ -1,3 +1,4 @@
 utm
 numpy
 networkx==2.0
+shapely
